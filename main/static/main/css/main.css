@@ -1,0 +1,48 @@
+body {
+    background: #D9E3FA;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+#main_block {
+    display: block;
+    width: 550px;
+    position: relative;
+    margin-top: 6vh;
+    padding: 40px;
+    height: auto;
+    background: #fff;
+    border-radius: 5vh;
+}
+#inputer2 {
+    margin-top: 20px;
+}
+body #btn_to_result {
+    display: block;
+    margin-top: 30px;
+
+}
+body #list_result {
+    list-style: none;
+    position: relative;
+}
+
+body #list_result li{
+    display: block;
+    margin-top: 10px;
+    position: relative;
+    left: -31px;
+}
+
+body #title_result {
+    margin-top: 5vh;
+}
+
+body #error {
+    display: flex;
+    height: 38px;
+    margin-top: 20px;
+    border-radius: 5px;
+    align-items: center;
+
+}

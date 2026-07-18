@@ -1,0 +1,40 @@
+{% extends 'main/layout.html' %}
+{% block title %}
+    Ввод данных
+{% endblock %}
+
+{% block content %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="input-group mb-3" id="inputer1">
+            <span class="input-group-text" id="basic-addon1">Код поступающего</span>
+            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" maxlength="7" minlength="7" name="code">
+        </div>
+        <div class="input-group mb-3" id="inputer2">
+            <input type="file" class="form-control" id="inputGroupFile01" name="file">
+        </div>
+        {% if error == 1 %}
+            <div class="p-3 mb-2 bg-danger-subtle text-danger-emphasis" id="error">Введите код</div>
+        {% endif %}
+        {% if error == 2 %}
+            <div class="p-3 mb-2 bg-danger-subtle text-danger-emphasis" id="error">Прикрепите файл</div>
+        {% endif %}
+        {% if error == 3 %}
+            <div class="p-3 mb-2 bg-danger-subtle text-danger-emphasis" id="error">некоректный файл</div>
+        {% endif %}
+        {% if error == 4 %}
+            <div class="p-3 mb-2 bg-danger-subtle text-danger-emphasis" id="error">Код введен некорректно</div>
+        {% endif %}
+        <button class="btn btn-warning" id="btn_to_result" type="submit">Рассчитать</button>
+    </form>
+
+    {% if error == 5 %}
+        <h3 id="title_result">Рузультаты</h3>
+
+        <ul id="list_result">
+            <li>Место в списке: {{ c1 }}</li>
+            <li>По первым приоритетам: {{ c2 }}</li>
+            <li>По согласиям первых приоритетов: {{ c3 }}</li>
+        </ul>
+    {% endif %}
+{% endblock %}
